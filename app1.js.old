@@ -1,0 +1,22 @@
+// app.js - Basic version that should definitely display content
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Simple route that sends plain text
+app.get('/', (req, res) => {
+  res.send('Hello World! Microsoft 365 Management Portal is running.');
+});
+
+// Another route for testing
+app.get('/test', (req, res) => {
+  res.send('<h1>Test Page</h1><p>This is a test page to confirm routing is working.</p>');
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Try visiting http://localhost:${PORT} in your browser`);
+});
+
+module.exports = app;
